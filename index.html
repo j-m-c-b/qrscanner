@@ -1,177 +1,174 @@
 <!DOCTYPE html>
-<html><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width"><title>https://itindex.com.co/apps/qrscanner/</title><link rel="stylesheet" type="text/css" href="resource://content-accessible/viewsource.css"></head><body id="viewsource" class="highlight" style="tab-size: 4"><pre id="line1"><span></span><span class="doctype">&lt;!DOCTYPE html&gt;</span><span>
-<span id="line2"></span></span><span>&lt;<span class="start-tag">html</span> <span class="attribute-name">lang</span>="<a class="attribute-value">en</a>"&gt;</span><span>
-<span id="line3"></span>
-<span id="line4"></span></span><span>&lt;<span class="start-tag">head</span>&gt;</span><span>
-<span id="line5"></span>    </span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">charset</span>="<a class="attribute-value">UTF-8</a>"&gt;</span><span>
-<span id="line6"></span>    </span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">name</span>="<a class="attribute-value">viewport</a>" <span class="attribute-name">content</span>="<a class="attribute-value">width=device-width, initial-scale=1.0</a>"&gt;</span><span>
-<span id="line7"></span>    </span><span>&lt;<span class="start-tag">title</span>&gt;</span><span>QR Scanner</span><span>&lt;/<span class="end-tag">title</span>&gt;</span><span>
-<span id="line8"></span>    </span><span>&lt;<span class="start-tag">style</span>&gt;</span><span>
-<span id="line9"></span>        body {
-<span id="line10"></span>            background-color: #111;
-<span id="line11"></span>            color: #fff;
-<span id="line12"></span>            font-family: Arial, sans-serif;
-<span id="line13"></span>            margin: 0;
-<span id="line14"></span>            padding: 0;
-<span id="line15"></span>            text-align: center;
-<span id="line16"></span>        }
-<span id="line17"></span>
-<span id="line18"></span>        h3 {
-<span id="line19"></span>            text-align: center;
-<span id="line20"></span>        }
-<span id="line21"></span>
-<span id="line22"></span>        #scanner-container {
-<span id="line23"></span>
-<span id="line24"></span>
-<span id="line25"></span>            align-items: center;
-<span id="line26"></span>            margin-top: 20px;
-<span id="line27"></span>        }
-<span id="line28"></span>
-<span id="line29"></span>        #qr-reader {
-<span id="line30"></span>
-<span id="line31"></span>
-<span id="line32"></span>            margin-bottom: 10px;
-<span id="line33"></span>        }
-<span id="line34"></span>
-<span id="line35"></span>        #scanned-text {
-<span id="line36"></span>            width: 100%;
-<span id="line37"></span>            padding: 10px;
-<span id="line38"></span>            margin-bottom: 10px;
-<span id="line39"></span>            border: 1px solid #333;
-<span id="line40"></span>            background-color: #333;
-<span id="line41"></span>            color: #fff;
-<span id="line42"></span>            box-sizing: border-box;
-<span id="line43"></span>            text-align: center;
-<span id="line44"></span>        }
-<span id="line45"></span>
-<span id="line46"></span>        #copy-button {
-<span id="line47"></span>            padding: 5px 10px;
-<span id="line48"></span>            background-color: #007bff;
-<span id="line49"></span>            color: #fff;
-<span id="line50"></span>            border: none;
-<span id="line51"></span>            cursor: pointer;
-<span id="line52"></span>        }
-<span id="line53"></span>
-<span id="line54"></span>        #copy-button:focus {
-<span id="line55"></span>            outline: none;
-<span id="line56"></span>        }
-<span id="line57"></span>
-<span id="line58"></span>        textarea {
-<span id="line59"></span>            height: 120px;
-<span id="line60"></span>        }
-<span id="line61"></span>    </span><span>&lt;/<span class="end-tag">style</span>&gt;</span><span>
-<span id="line62"></span>    </span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:https://itindex.com.co/apps/qrscanner/html5-qrcode.min.js">html5-qrcode.min.js</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
-<span id="line63"></span></span><span>&lt;/<span class="end-tag">head</span>&gt;</span><span>
-<span id="line64"></span>
-<span id="line65"></span></span><span>&lt;<span class="start-tag">body</span>&gt;</span><span>
-<span id="line66"></span>
-<span id="line67"></span>
-<span id="line68"></span>    </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">scanner-container</a>"&gt;</span><span>
-<span id="line69"></span>        </span><span>&lt;<span class="start-tag">div</span>&gt;</span><span>QR Scanner</span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
-<span id="line70"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">qr-reader</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
-<span id="line71"></span>
-<span id="line72"></span>
-<span id="line73"></span>
-<span id="line74"></span>
-<span id="line75"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">scanned-text</a>"&gt;</span><span>
-<span id="line76"></span>
-<span id="line77"></span>            </span><span>&lt;<span class="start-tag">button</span> <span class="attribute-name">id</span>="<a class="attribute-value">copy-button</a>"&gt;</span><span>Copy</span><span>&lt;/<span class="end-tag">button</span>&gt;</span><span> </span><span>&lt;<span class="start-tag">br</span>&gt;</span><span>
-<span id="line78"></span>            </span><span>&lt;<span class="start-tag">textarea</span> <span class="attribute-name">id</span>="<a class="attribute-value">scanned-result</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">textarea</span>&gt;</span><span>
-<span id="line79"></span>
-<span id="line80"></span>
-<span id="line81"></span>
-<span id="line82"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
-<span id="line83"></span>    </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
-<span id="line84"></span>
-<span id="line85"></span>    </span><span>&lt;<span class="start-tag">script</span>&gt;</span><span>
-<span id="line86"></span>        document.addEventListener("DOMContentLoaded", function () {
-<span id="line87"></span>            var scannerContainer = document.getElementById('scanner-container');
-<span id="line88"></span>            var qrReader = new Html5QrcodeScanner(
-<span id="line89"></span>                "qr-reader", { fps: 10, qrbox: 250, showTorchButtonIfSupported: true });
-<span id="line90"></span>
-<span id="line91"></span>            qrReader.render(onScanSuccess);
-<span id="line92"></span>            var copyButton = document.getElementById('copy-button');
-<span id="line93"></span>            function onScanSuccess(decodedText, decodedResult) {
-<span id="line94"></span>                var scannedTextDiv = document.getElementById('scanned-text');
-<span id="line95"></span>                var scannedResultTextarea = document.getElementById('scanned-result');
-<span id="line96"></span>
-<span id="line97"></span>
-<span id="line98"></span>                // Change text area color when a new QR code is read
-<span id="line99"></span>                scannedTextDiv.style.backgroundColor = '#4C0050'; // Green color
-<span id="line100"></span>                setTimeout(function () {
-<span id="line101"></span>                    scannedTextDiv.style.backgroundColor = '#333'; // Original color after 0.2 seconds
-<span id="line102"></span>                }, 200);
-<span id="line103"></span>
-<span id="line104"></span>                scannedResultTextarea.value = decodedText;
-<span id="line105"></span>                scannedTextDiv.style.display = 'block';
-<span id="line106"></span>
-<span id="line107"></span>                // Automatically focus the textarea
-<span id="line108"></span>                // scannedResultTextarea.focus();
-<span id="line109"></span>
-<span id="line110"></span>            }
-<span id="line111"></span>
-<span id="line112"></span>            copyButton.addEventListener('click', function () {
-<span id="line113"></span>                var scannedTextDiv = document.getElementById('scanned-text');
-<span id="line114"></span>                var scannedResultTextarea = document.getElementById('scanned-result');
-<span id="line115"></span>
-<span id="line116"></span>                // Change button color on click
-<span id="line117"></span>                copyButton.style.backgroundColor = '#4C8850'; // Green color
-<span id="line118"></span>
-<span id="line119"></span>                copyButton.innerHTML = "Copied!";
-<span id="line120"></span>
-<span id="line121"></span>                setTimeout(function () {
-<span id="line122"></span>                    copyButton.style.backgroundColor = '#007bff'; // Original color after 0.3 seconds
-<span id="line123"></span>
-<span id="line124"></span>                    copyButton.innerHTML = "Copy";
-<span id="line125"></span>
-<span id="line126"></span>                }, 1000);
-<span id="line127"></span>
-<span id="line128"></span>
-<span id="line129"></span>                //       scannedResultTextarea.focus();
-<span id="line130"></span>                //      document.execCommand('copy');
-<span id="line131"></span>                copyToClipboard(scannedResultTextarea.value);
-<span id="line132"></span>            });
-<span id="line133"></span>        });
-<span id="line134"></span>
-<span id="line135"></span>        function copyToClipboard(text) {
-<span id="line136"></span>            // Create a temporary textarea element
-<span id="line137"></span>            var textarea = document.createElement("textarea");
-<span id="line138"></span>
-<span id="line139"></span>            // Set the value to the text you want to copy
-<span id="line140"></span>            textarea.value = text;
-<span id="line141"></span>
-<span id="line142"></span>            // Make sure it's not visible
-<span id="line143"></span>            textarea.style.position = "absolute";
-<span id="line144"></span>            textarea.style.left = "-9999px";
-<span id="line145"></span>
-<span id="line146"></span>            // Append the textarea to the document
-<span id="line147"></span>            document.body.appendChild(textarea);
-<span id="line148"></span>
-<span id="line149"></span>            // Select the text in the textarea
-<span id="line150"></span>            textarea.select();
-<span id="line151"></span>
-<span id="line152"></span>            // Execute the copy command
-<span id="line153"></span>            document.execCommand('copy');
-<span id="line154"></span>
-<span id="line155"></span>            // Remove the temporary textarea
-<span id="line156"></span>            document.body.removeChild(textarea);
-<span id="line157"></span>
-<span id="line158"></span>            // Alert the user or perform any other action
-<span id="line159"></span>
-<span id="line160"></span>        }
-<span id="line161"></span>
-<span id="line162"></span>        document.addEventListener('keydown', function (event) {
-<span id="line163"></span>            if (event.ctrlKey &amp;&amp; event.key === 'c') {
-<span id="line164"></span>                var copyButton = document.getElementById('copy-button');
-<span id="line165"></span>                if (copyButton) {
-<span id="line166"></span>                    copyButton.click();
-<span id="line167"></span>                }
-<span id="line168"></span>            }
-<span id="line169"></span>        });
-<span id="line170"></span>    </span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
-<span id="line171"></span>
-<span id="line172"></span></span><span>&lt;/<span class="end-tag">body</span>&gt;</span><span>
-<span id="line173"></span>
-<span id="line174"></span></span><span>&lt;/<span class="end-tag">html</span>&gt;</span><span>
-<span id="line175"></span></span></pre></body></html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Scanner</title>
+    <style>
+        body {
+            background-color: #111;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        #scanner-container {
+
+
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        #qr-reader {
+
+
+            margin-bottom: 10px;
+        }
+
+        #scanned-text {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #333;
+            background-color: #333;
+            color: #fff;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        #copy-button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        #copy-button:focus {
+            outline: none;
+        }
+
+        textarea {
+            height: 120px;
+        }
+    </style>
+    <script src="html5-qrcode.min.js"></script>
+</head>
+
+<body>
+
+
+    <div id="scanner-container">
+        <div>QR Scanner</div>
+        <div id="qr-reader"></div>
+
+
+
+
+        <div id="scanned-text">
+
+            <button id="copy-button">Copy</button> <br>
+            <textarea id="scanned-result"></textarea>
+
+
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var scannerContainer = document.getElementById('scanner-container');
+            var qrReader = new Html5QrcodeScanner(
+                "qr-reader", { fps: 10, qrbox: 250, showTorchButtonIfSupported: true });
+
+            qrReader.render(onScanSuccess);
+            var copyButton = document.getElementById('copy-button');
+            function onScanSuccess(decodedText, decodedResult) {
+                var scannedTextDiv = document.getElementById('scanned-text');
+                var scannedResultTextarea = document.getElementById('scanned-result');
+
+
+                // Change text area color when a new QR code is read
+                scannedTextDiv.style.backgroundColor = '#4C0050'; // Green color
+                setTimeout(function () {
+                    scannedTextDiv.style.backgroundColor = '#333'; // Original color after 0.2 seconds
+                }, 200);
+
+                scannedResultTextarea.value = decodedText;
+                scannedTextDiv.style.display = 'block';
+
+                // Automatically focus the textarea
+                // scannedResultTextarea.focus();
+
+            }
+
+            copyButton.addEventListener('click', function () {
+                var scannedTextDiv = document.getElementById('scanned-text');
+                var scannedResultTextarea = document.getElementById('scanned-result');
+
+                // Change button color on click
+                copyButton.style.backgroundColor = '#4C8850'; // Green color
+
+                copyButton.innerHTML = "Copied!";
+
+                setTimeout(function () {
+                    copyButton.style.backgroundColor = '#007bff'; // Original color after 0.3 seconds
+
+                    copyButton.innerHTML = "Copy";
+
+                }, 1000);
+
+
+                //       scannedResultTextarea.focus();
+                //      document.execCommand('copy');
+                copyToClipboard(scannedResultTextarea.value);
+            });
+        });
+
+        function copyToClipboard(text) {
+            // Create a temporary textarea element
+            var textarea = document.createElement("textarea");
+
+            // Set the value to the text you want to copy
+            textarea.value = text;
+
+            // Make sure it's not visible
+            textarea.style.position = "absolute";
+            textarea.style.left = "-9999px";
+
+            // Append the textarea to the document
+            document.body.appendChild(textarea);
+
+            // Select the text in the textarea
+            textarea.select();
+
+            // Execute the copy command
+            document.execCommand('copy');
+
+            // Remove the temporary textarea
+            document.body.removeChild(textarea);
+
+            // Alert the user or perform any other action
+
+        }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.ctrlKey && event.key === 'c') {
+                var copyButton = document.getElementById('copy-button');
+                if (copyButton) {
+                    copyButton.click();
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
